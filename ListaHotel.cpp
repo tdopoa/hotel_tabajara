@@ -130,8 +130,23 @@ void ListaHotel::reservarQuarto(ListaHotel listaHotel){
     cin >> cod_cliente;
 
     listaQuartos();
-    printf("Cod Quarto..: ");
-    cin >> cod_quarto;
+
+    bool quartoReservado = true;
+
+    do{
+      printf("Codigo do Quarto..: ");
+      cin >> cod_quarto;
+
+      for(int r = 0; r < reservas.size(); r++){
+        if(reservas[r].getQuarto()==cod_quarto){
+          printf("Esse quarto ja esta reservado, tente outro por favor! \n");
+          quartoReservado = false;
+          break;
+        }
+        quartoReservado = true;
+      }
+
+    }while(!quartoReservado);
 
     printf("Data Inicial...: ");
     cin.ignore();
