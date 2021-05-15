@@ -1,7 +1,6 @@
 #include "Hotel.hpp"
 #include <iostream>
 #include <stdlib.h>
-#include <time.h>
 
 int Hotel::ultimoId = 0;
 

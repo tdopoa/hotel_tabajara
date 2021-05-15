@@ -1,7 +1,6 @@
 #include "Funcionario.hpp"
 #include <iostream>
 #include <stdlib.h>
-#include <time.h>
 
 int Funcionario::ultimoId = 0;
 

@@ -1,11 +1,12 @@
  
 #include "ListaCliente.hpp"
 #include "Cliente.hpp"
-#include "Time.hpp"
 #include <iostream>
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+
+using namespace std;
 
 void ListaCliente::adicionaCliente(){
   int id;
@@ -14,21 +15,22 @@ void ListaCliente::adicionaCliente(){
   string telefone;
   string estado;
 
-  system("cls");
+  system("clear");
   printf("================================================================\n");
   printf("   HOTEL TABAJARA - SISTEMA DE RESERVAS E OCUPACAO DE QUARTOS   \n");
   printf("================================================================\n");
   printf("                    Inserir Cliente  \n");
   printf("================================================================\n");
   printf("Nome.......: ");
-  cin >> nome;
+  cin.ignore();
+  getline(cin, nome);
 
   printf("Endereco...: ");
-  cin >> endereco;
+  getline(cin, endereco);
 
   printf("Telefone...: ");
-  cin >> telefone;
-
+  getline(cin, telefone);
+  
   printf("Estado.....: ");
   cin >> estado;
 
@@ -37,13 +39,18 @@ void ListaCliente::adicionaCliente(){
 
 
 void ListaCliente::listaClientes(){
-  system("cls");
+  system("clear");
   printf("================================================================\n");
   printf("                       Lista de Clientes  \n");
   printf("================================================================\n");
 
   for(int e = 0; e < clientes.size(); e++){
-    cout << " Id: [" << clientes[e].getId() << "] | Nome: " << clientes[e].getNome() << "\n";
+    cout << " Id: [" << clientes[e].getId() << "]" << "\n";
+    cout << " | Nome: " << clientes[e].getNome() << "\n";
+    cout << " | Endereco: " << clientes[e].getEndereco() << "\n";
+    cout << " | Telefone: " << clientes[e].getTelefone() << "\n";
+    cout << " | Estado: " << clientes[e].getEstado() << "\n";
+    cout << " ------------------------------------------------------ " << "\n";
   }
 
 
@@ -58,7 +65,7 @@ void ListaCliente::alterarCliente() {
     string telefone;
     string estado;
 
-    system("cls");
+    system("clear");
     printf("================================================================\n");
     printf("   HOTEL TABAJARA - SISTEMA DE RESERVAS E OCUPACAO DE QUARTOS   \n");
     printf("================================================================\n");
@@ -66,7 +73,7 @@ void ListaCliente::alterarCliente() {
     printf("================================================================\n");
 
     for (int e = 0; e < clientes.size(); e++) {
-        cout << "       Id: [" << clientes[e].getId() << "] | Nome: " << clientes[e].getNome() << "     \n";
+        cout << "  Id: [" << clientes[e].getId() << "] | Nome: " << clientes[e].getNome() << "     \n";
     }
 
     printf(" Digite o codigo do cliente que deseja alterar :  \n\n");
@@ -75,16 +82,17 @@ void ListaCliente::alterarCliente() {
     printf("\nPreencha os dados novamente: \n\n");
 
     printf("Nome.......: ");
-    cin >> nome;
+    cin.ignore();
+    getline(cin, nome);
 
     printf("Endereco...: ");
-    cin >> endereco;
+    getline(cin, endereco);
 
     printf("Telefone...: ");
-    cin >> telefone;
+    getline(cin, telefone);
 
     printf("Estado.....: ");
-    cin >> estado;
+    getline(cin, estado);
 
     for (int e = 0; e < clientes.size(); e++) {
         if (clientes[e].getId() == codigo) {

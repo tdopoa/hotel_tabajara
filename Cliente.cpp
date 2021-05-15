@@ -1,7 +1,6 @@
 #include "Cliente.hpp"
 #include <iostream>
 #include <stdlib.h>
-#include <time.h>
 
 int Cliente::ultimoId = 0;
 
@@ -11,6 +10,9 @@ Cliente::Cliente(string nome, string endereco, string telefone, string estado){
   this->setEndereco(endereco);
   this->setTelefone(telefone);
   this->setEstado(estado);
+}
+
+Cliente::Cliente(){
 }
 
 string Cliente::getNome(){

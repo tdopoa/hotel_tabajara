@@ -10,6 +10,7 @@ class Cliente
 {
   public:
     Cliente(string nome, string endereco, string telefone, string estado);
+    Cliente();
 
     string getNome();
     void setNome(string nome);
